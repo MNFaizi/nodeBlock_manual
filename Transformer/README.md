@@ -67,4 +67,13 @@ screen -R tfsc
 <img src="https://user-images.githubusercontent.com/56349947/204071953-6daa04e9-a6c9-4cbb-b76a-c6c08557ef3a.png">
 
 #### Function Menu
-
+| Number |       Menu       |           Function              |
+|--------|------------------|---------------------------------|
+|    1   | Transaction      | Transfer Token to Other Address |
+|    2   | Stake            | Stake Token                     |
+|    3   | Unstake          | Unstake your stake token        |
+|    4   | Invest           | Invest to choosen validator     |
+|    5   | Disinvest        | Withdraw invested token         |
+|    6   | Bonus            | Claim bonus daily when run node |
+|    7   | PrintAccountInfo | Show Account information        |
+|    0   | Exit             | Close the program               |
