@@ -54,7 +54,7 @@ it will generate 3 file: data.db, config.json, cert
 nano config.json
 ```
 you will see like this and edit with your own validator name and your ip address 
-<img src="https://user-images.githubusercontent.com/56349947/204071826-647c5629-cb4a-4cb3-a824-e30f01c7ec50.jpg)">
+<img src="https://user-images.githubusercontent.com/56349947/204071826-647c5629-cb4a-4cb3-a824-e30f01c7ec50.jpg">
 
 ## 4. Run the Program
 ```
