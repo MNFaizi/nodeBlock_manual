@@ -24,16 +24,15 @@ Based on blockchain platform DCloud combines a universal set of services: multi 
 # Requirement
 To run node you must have meet a requirement:
 ## Minimum Hardware Requirement
-- CPU       : 4 Core
-- Memory    : 4 GB
-- Disk      : 40 GB
-- Bandwith  : 100 Mbps
-
+|   CPU  | Memory | Disk  | Bandwith |
+|--------|--------|-------|----------|
+| 4 Core |  4 GB  | 40 GB | 100 Mbps |
 ## Software Requirement
-- OS        : Ubuntu 22.04 Desktop
-- Erlang    : 24.3 Version
-- Docker    : 20.10.18 Version
+|       OS     | Erlang |  Docker  |
+|--------------|--------|----------|
+| Ubuntu 22.04 |  22.4  | 20.10.18 |
 
+> [Erlang Insatllation](./Erlang.md)
 # Manual Setup
 For install manually follow this step
 
@@ -68,7 +67,6 @@ Download Tea Client
 wget https://tea.thepower.io/teaclient
 chmod +x teaclient
 ./teaclient -n <nickname> <chain token>.<personal token>
-
 ```
 - 'nickname' change with your nickname
 - 'chain token' get from dev it will publish in announcement channel<a href='https://t.me/thepowerio)'>Telegram Announcement</a>
@@ -157,9 +155,10 @@ systemctl daemon-reload
 systemctl enbale tpnode
 systemctl start tpnode
 ```
-## Usefull Command
+# Usefull Command
 
 - Check node 
 ```
 curl http://your_node.example.com:1080/api/node/status | jq
 ```
+# Error Handling
