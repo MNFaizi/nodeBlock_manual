@@ -11,14 +11,19 @@ Based on blockchain platform DCloud combines a universal set of services: multi 
 
 # General Information
 
+Testnet Information :
 > [About Testnet](https://medium.com/the-power-official-blog/deinfra-testnet-verification-and-test-assignment-in-the-community-bot-are-launched-today-b253f397b1fa)
 
-> [Telegram Groub](https://t.me/thepower_chat)
+Telegram Group :
+> [Telegram Group](https://t.me/thepower_chat)
 
+Telegram Channel :
 > [Telegram Announcement](https://t.me/thepowerio)
 
+Telegram Bot :
 > [Rover Bot](https://t.me/thepowerio_bot)
 
+Node Checker :
 > [Checker](https://zabbix.thepower.io/zabbix.php?action=dashboard.view#)
 
 # Requirement
