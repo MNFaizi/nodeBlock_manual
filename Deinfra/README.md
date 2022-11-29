@@ -6,7 +6,7 @@
 Based on blockchain platform DCloud combines a universal set of services: multi virtual machines, decentralized storage, sophisticated tokenomisc, nodes and chains, with Power Hub as one-stop entry for developers, users, node providers and projects.
 </p>
 <p align='center'>
-    <a href="https://doc.thepower.io/docs/about"></a>Official Documentation About Power DCloud (DeInfra)
+    <a href="https://doc.thepower.io/docs/about">Official Documentation About Power DCloud (DeInfra)</a>
 </p>
 
 # General Information
