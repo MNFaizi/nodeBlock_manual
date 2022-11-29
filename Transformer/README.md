@@ -63,6 +63,7 @@ screen -R tfsc
 ``` 
 > to minimize the screen `CTRL + A + D` if you want to enter the screen again use this command `screen -r tfsc`
 
+Wait for faucet is landing and you can stake in your own address and invest in other address
 ### Program prompt box
 <img src="https://user-images.githubusercontent.com/56349947/204071953-6daa04e9-a6c9-4cbb-b76a-c6c08557ef3a.png">
 
