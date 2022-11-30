@@ -70,6 +70,7 @@ ufw enable
 ```
 Download Tea Client
 ```
+cd $HOME
 mkdir teaclient && cd teaclient
 wget https://tea.thepower.io/teaclient
 chmod +x teaclient
