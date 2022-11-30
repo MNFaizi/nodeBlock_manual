@@ -65,10 +65,12 @@ ufw allow 22
 ufw allow 1800
 ufw allow 1443
 ufw allow 1080
+ufw allow 80
 ufw enable
 ```
 Download Tea Client
 ```
+mkdir teaclient && cd teaclient
 wget https://tea.thepower.io/teaclient
 chmod +x teaclient
 ./teaclient -n <nickname> <chain token>.<personal token>
@@ -86,12 +88,14 @@ It wil generate 2 file `node.config and genesis.txt` in your folder when you run
 sudo -i
 apt-get install socat
 curl https://get.acme.sh | sh -s email=youractiveemail
+source $HOME/.bashrc
 ```
 `youractiveemail` - fill with your email
 - close terminal
 - login again to your vps
+- install SSL
 ```
-acme.sh --issue --standalone -d your_node.example.com
+acme.sh --server letsencrypt --issue --standalone  -d your_node.example.com
 acme.sh --install-cert -d your_node.example.com \
 --cert-file /opt/thepower/db/cert/your_node.example.com.crt \
 --key-file /opt/thepower/db/cert/your_node.example.com.key \
@@ -106,10 +110,9 @@ Make directory and move file `node.config & genesis.txt` to working directory
 ```
 cd /opt/thepower
 mkdir {db,log}
-cp $HOME/teaCeremonyDirectory/node.config /opt/thepower/node.config
-cp $HOME/eaCeremonyDirectory/genesis.txt /opt/thepower/genesis.txt
+cp $HOME/teaclient/node.config /opt/thepower/node.config
+cp $HOME/teaclient/genesis.txt /opt/thepower/genesis.txt
 ```
-`teaCeremonyDirectory` - change with your directory when run tea client
 Start Docker
 ```
 docker run -d \
@@ -132,8 +135,8 @@ Make directory and move file `node.config & genesis.txt` to working directory
 ```
 cd /opt/thepower
 mkdir {db,log}
-cp $HOME/teaCeremonyDirectory/node.config /opt/thepower/node.config
-cp $HOME/eaCeremonyDirectory/genesis.txt /opt/thepower/genesis.txt
+cp $HOME/teaclient/node.config /opt/thepower/node.config
+cp $HOME/teaclient/genesis.txt /opt/thepower/genesis.txt
 ```
 Make Service
 ```
@@ -158,13 +161,15 @@ EOF
 Start Node
 ```
 systemctl daemon-reload
-systemctl enbale tpnode
+systemctl enable tpnode
 systemctl start tpnode
 ```
+After node successfull launch, send your hostname to <b>Rover Bot</b>
 # Usefull Command
 
 - Check node 
 ```
 curl http://your_node.example.com:1080/api/node/status | jq
 ```
-# Error Handling
+
+# Error Handlling
