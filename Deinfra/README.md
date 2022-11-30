@@ -64,7 +64,7 @@ Before start Tea Ceremony must open port `1800`,`1443`,`1080`
 ufw allow 22
 ufw allow 1800
 ufw allow 1443
-ufw allow 10800
+ufw allow 1080
 ufw enable
 ```
 Download Tea Client
@@ -109,6 +109,7 @@ mkdir {db,log}
 cp $HOME/teaCeremonyDirectory/node.config /opt/thepower/node.config
 cp $HOME/eaCeremonyDirectory/genesis.txt /opt/thepower/genesis.txt
 ```
+`teaCeremonyDirectory` - change with your directory when run tea client
 Start Docker
 ```
 docker run -d \
@@ -123,7 +124,7 @@ docker run -d \
 -p 1443:1443 \
 thepowerio/tpnode
 ```
-'port' must change with port in use in your chain it store in file `node.config` in the end every ip address other node
+`port` must change with port in use in your chain it store in file `node.config` in the end every ip address other node
 
 `your_node.example.com` - change with your hostname
 ### 5.2 Source Code Run
