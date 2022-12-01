@@ -45,7 +45,7 @@ nano config.json
 ```
 cd ..
 screen -R inery
-./ine.py --master
+./ine.py --master && cd master.node/blockchain && tail -f nodine.log
 ```
 > after log its running close screen with `CTRL + A + D` and it will take time 2-3 hours depend on block high the chain
 
