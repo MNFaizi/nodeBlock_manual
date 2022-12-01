@@ -89,13 +89,13 @@ It wil generate 2 file `node.config and genesis.txt` in your folder when you run
 sudo -i
 apt-get install socat
 curl https://get.acme.sh | sh -s email=youractiveemail
-source $HOME/.bashrc
 ```
 `youractiveemail` - fill with your email
 - close terminal
 - login again to your vps
 - install SSL
 ```
+source $HOME/.bashrc
 acme.sh --server letsencrypt --issue --standalone  -d your_node.example.com
 acme.sh --install-cert -d your_node.example.com \
 --cert-file /opt/thepower/db/cert/your_node.example.com.crt \
