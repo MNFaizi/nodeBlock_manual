@@ -59,7 +59,7 @@ For install manually follow this step
 Wait until receive personal token to join tea Ceremony
 
 ## 3. Join Tea Ceremony
-Before start Tea Ceremony must open port `1800`,`1443`,`1080`
+Before start Tea Ceremony must open port `1800`,`1443`,`1080` and install latest version of erlang
 ```
 ufw allow 22
 ufw allow 1800
