@@ -15,6 +15,9 @@ Tesnet Infomation :
 Official Guide Installation :
 > [Guide](https://dusk.network/pages/incentivized-testnet)
 
+Network Explorer :
+>[Explorer](https://explorer.dusk.network/)
+
 # Requirement
 To run node you must have meet a requirement:
 ## Minimum Hardware Requirement
@@ -33,7 +36,7 @@ For Install Manually Follow This Step
 wget https://github.com/dusk-network/wallet-cli/releases/download/v0.13.0/ruskwallet0.13.0-linux-x64-libssl3.tar.gz
 tar -xvf tar -xf ruskwallet0.13.0-linux-x64-libssl3.tar.gz && mv ruskwallet0.13.0-linux-x64-libssl3 ruskwallet
 cd ruskwallet
-chmod +x rusk-wallet && ./rusk-wallet --state http://127.0.0.1:8585
+chmod +x rusk-wallet && ./rusk-wallet
 ```
 - Create Wallet and Backup recovery phrase
 <img src="https://lh5.googleusercontent.com/LtZ72tI1L_RXl29lAjxZzWMpuaF5xRqwmxm8EKkM4uhKi5MvbTjE2CNszKOVqS3r9RyU4uGnkIgRpEIKWuBJC_lwW9cpzkaEtwvG8uKag5cI0l-wevrZIABQqNkkaspP5XdcUKilDhB94UAFkcNdzRn0MFSdud2-MlhtLvJG49FD93jYSOnhLxaxWldRlw">
@@ -50,7 +53,7 @@ and show these two file `.key & .cpk` when export success, backup the file in sa
 </p>
 
 ## Node Install
-### 1. Update 
+### 1. Update Package
 ```
 sudo apt update && sudo apt upgrade -y 
 ```
@@ -65,4 +68,37 @@ ufw enable
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://dusk-infra.ams3.digitaloceanspaces.com/rusk/itn-installer.sh | sh
 ```
-### 4.
+- copy file `.key` to `/opt/dusk/conf/`
+```
+cd $HOME/.dusk/rusk-wallet
+cp *.key /opt/dusk/conf/consensus.keys
+```
+- set password
+```
+echo 'DUSK_CONSENSUS_KEYS_PASS=YourPassword' > /opt/dusk/services/dusk.conf
+```
+`YourPassword` - change with your own password when do export provisioner key
+
+### Start the Node
+```
+service rusk start
+service dusk start
+```
+## Stake Token
+- open wallet
+```
+cd $HOME/ruskwallet
+./rusk-wallet --state http://127.0.0.1:8585
+```
+- access your wallet and fill password
+- stake your token, `minimum stake is 1002 tDUSK`
+<img src="https://lh6.googleusercontent.com/jDFCInEU9bdWyrQiltb98eYnCsz9Wlu2CDicUFBRpp1jKnsyaPY_J04I6UJILQetwoZwzACEX9vw5AXqjUyrgNh-RhWnhW05PbVKannSbWITEt9FcADUdijBiNj_LhyeWk658oFZj61kj9p5TAh05FwfE1Dp9Du5RtjlINyg1L67cV9zIQ9Qd5d9Zx53SA">
+<img src="https://lh3.googleusercontent.com/rtMSw_UzEEWeqsw8T6C5j9_ljdRlrC5fFVW8SI24I6Tf5fRkWADGipUK12f9DJSPTgPx42o5nDg5KJu3d505CU9jpf4H5dnftEktAPYjW16vtE_JmLfte5VEtE_RCzM13NIH1Fzk7v101mFp-_BJb7v3toANega9Rlejfw72Sb-ANBAXUlS0WiYn5oqV9g">
+- check transaction on explorer
+<img src="https://lh5.googleusercontent.com/60c0e1iFW-sHDQSbtDSGKOuLH_r4nNFGsLsZKAJCkkvG9qLtGyB632LjhC6nCHCOnwcWYT5vBvkW4KMy3slQZUoCxAl-BmfEvl7sCVeVwaqP9U7I5QBqNnUUzEiF_i4NkP-HNcZsFEjiuEWi4wt18IP-PovxxCsbn17KuJ2gGtvQ-WuKFqGEcZKBMHj-YA">
+
+# Usefull Command
+#### Check Progress Sync
+```
+tail -100 /var/log/dusk.log | grep 'Accepted'
+```
