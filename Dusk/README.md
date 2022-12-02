@@ -8,7 +8,7 @@
 </p>
 <div align="center">
     <a href="https://discord.com/invite/dusknetwork" target="_blank"><img src="https://user-images.githubusercontent.com/50621007/176236430-53b0f4de-41ff-41f7-92a1-4233890a90c8.png" width="30"></a>
-    <a href="https://t.me/DuskNetwork" target="_blank"><img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"></a>
+    <a href="https://t.me/DuskNetwork" target="_blank"><img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30" margin="5px"></a>
     <a href="https://twitter.com/duskfoundation" target="_blank"><img src="https://user-images.githubusercontent.com/56349947/205331052-6d4d4216-3529-490c-a1b9-8c3618aac8e2.png" width="30"></a>
 </div>
 
