@@ -1,5 +1,5 @@
 <p align="center">
-    <img  href="inery.io" height="50" height="auto" src="https://user-images.githubusercontent.com/56349947/206113004-82a878b2-ac35-42d5-9257-ef5c5f45bd9c.svg">
+    <img  href="inery.io" height="50" height="auto" src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fuploads-ssl.webflow.com%2F620398f412d5829aa28fbb86%2F62278cc0803be26e4ccfc160_portrait-logo-color.svg&imgrefurl=https%3A%2F%2Fexorde.network%2Fbrand&tbnid=3ByULG_1EH02uM&vet=12ahUKEwiEv7q4_Ob7AhX1B7cAHWfgA04QMygSegUIARDPAQ..i&docid=giN_KRHA9n4btM&w=800&h=515&q=exorde&ved=2ahUKEwiEv7q4_Ob7AhX1B7cAHWfgA04QMygSegUIARDPAQ">
 </p>
 
 <p align="center">Exorde is the web3 protocol that empowers developers to crawl and link all public data on the web.</p>
