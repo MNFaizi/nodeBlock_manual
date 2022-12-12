@@ -152,9 +152,10 @@ nano config.json
 docker run --rm -v $PWD:/data -v $PWD/config.json:/build/config.json qblockchain/js-interface:testnet validators.js
 ```
 ## Register to Website
-<p>
+<p align="center">
     <a target="_blank" href="https://itn.qdev.li/">Register Here</a>
 </p>
+
 >fill out the form, after successfull you should receive your own validator name like `--ethstats=ITN-testvalidatorname:qstats-testnet@stats.qtestnet.org` or just `ITN-YourValidatorName`
 
 ### Configure Docker
