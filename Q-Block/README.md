@@ -77,7 +77,7 @@ cd ..
 docker-compose run --rm --entrypoint "geth account new --datadir=/data --password=/data/keystore/pwd.txt" testnet-validator-node
 ```
 >after that you will see output command that your new key was generated like this
-``
+```
 Your new key was generated
 
 Public address of the key:   0xb3FF24F818b0ff6Cc50de951bcB8f86b52287dac
@@ -87,4 +87,4 @@ Path of the secret key file: /data/keystore/UTC--2021-01-18T11-36-28.705754426Z-
 - You must NEVER share the secret key with anyone! The key controls access to your funds!
 - You must BACKUP your key file! Without the key, it's impossible to access account funds!
 - You must REMEMBER your password! Without the password, it's impossible to decrypt the key!
-``
+```
