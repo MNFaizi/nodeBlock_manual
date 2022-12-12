@@ -23,6 +23,9 @@
 - Validator Status :
 >[Validator](https://stats.qtestnet.org/)
 
+- Register incentive Testnet :
+>[Register](https://itn.qdev.li/)
+
 # Requirement
 To run node you must have meet a requirement:
 > base on my machine
@@ -88,3 +91,97 @@ Path of the secret key file: /data/keystore/UTC--2021-01-18T11-36-28.705754426Z-
 - You must BACKUP your key file! Without the key, it's impossible to access account funds!
 - You must REMEMBER your password! Without the password, it's impossible to decrypt the key!
 ```
+## Get Faucet
+ <p align="center">
+    <a target="_blank" href="https://faucet.qtestnet.org/">Claim Faucet</a>
+ <p>
+
+## Configure Setup
+### Edit .env file
+```
+cp .env.example .env
+nano .env
+```
+>Output like this
+```
+# docker image for q client
+QCLIENT_IMAGE=qblockchain/q-client:1.2.1
+
+# your q address here (without leading 0x)
+ADDRESS=b3FF24F818b0ff6Cc50de951bcB8f86b52287DAc
+
+# your public IP address here
+IP=193.19.228.94
+
+# the port you want to use for p2p communication (default is 30313)
+EXT_PORT=30313
+
+# extra bootnode you want to use
+BOOTNODE1_ADDR=enode://c610793186e4f719c1ace0983459c6ec7984d676e4a323681a1cbc8a67f506d1eccc4e164e53c2929019ed0e5cfc1bc800662d6fb47c36e978ab94c417031ac8@79.125.97.227:30304
+BOOTNODE2_ADDR=enode://8eff01a7e5a66c5630cbd22149e069bbf8a8a22370cef61b232179e21ba8c7b74d40e8ee5aa62c54d145f7fc671b851e5ccbfe124fce75944cf1b06e29c55c80@79.125.97.227:30305
+BOOTNODE3_ADDR=enode://7a8ade64b79961a7752daedc4104ca4b79f1a67a10ea5c9721e7115d820dbe7599fe9e03c9c315081ccf6a2afb0b6652ee4965e38f066fe5bf129abd6d26df58@79.125.97.227:30306
+```
+- change docker image from 1.2.1 to 1.2.2 on this line like this
+```
+# docker image for q client
+QCLIENT_IMAGE=qblockchain/q-client:1.2.1
+```
+- put your public address on this line without 0x like this
+```
+# your q address here (without leading 0x)
+ADDRESS=b3FF24F818b0ff6Cc50de951bcB8f86b52287DAc
+```
+after edit out from nano and save `ctrl + x` `y` and `enter`
+### Edit config.json file
+```
+nano config.json
+```
+>output like this
+```
+    {
+      "address": "b3FF24F818b0ff6Cc50de951bcB8f86b52287DAc",
+      "password": "supersecurepassword",
+      "keystoreDirectory": "/data",
+      "rpc": "https://rpc.qtestnet.org"
+    }
+```
+- change address without 0x in address line
+- change password with your password on password line
+## Put Validator to Stake
+```
+docker run --rm -v $PWD:/data -v $PWD/config.json:/build/config.json qblockchain/js-interface:testnet validators.js
+```
+## Register to Website
+<p>
+    <a target="_blank" href="https://itn.qdev.li/">Register Here</a>
+</p>
+>fill out the form, after successfull you should receive your own validator name like `--ethstats=ITN-testvalidatorname:qstats-testnet@stats.qtestnet.org` or just `ITN-YourValidatorName`
+
+### Configure Docker
+```
+nano docker-compose.yaml
+```
+>output like this
+```
+testnet-validator-node:
+  image: $QCLIENT_IMAGE
+  entrypoint: ["geth", "--ethstats=<Your_Validator_Name>:<Testnet_access_key>@stats.qtestnet.org", "--datadir=/data", ...]
+```
+- then change `--ethstats` with your own from register website
+
+## Run Application
+```
+docker-compose up -d
+```
+
+# Usefull Command
+- check logs:
+```
+docker-compose logs -f
+```
+- stop application
+```
+docker-compose down
+```
+- export private key
+[Export](./Export_PrivKey)
