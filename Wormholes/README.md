@@ -38,7 +38,7 @@ To run node you must have meet a requirement:
 # Manual Setup Validator Node
 For Install Manually Follow This Step
 
-Before run make sure you create wallet first and have 70k balance to became validator.
+>Before run make sure you create wallet first and have 70k balance to became validator.
 
 ## Update Dependency
 ```
