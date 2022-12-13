@@ -38,6 +38,8 @@ To run node you must have meet a requirement:
 # Manual Setup Validator Node
 For Install Manually Follow This Step
 
+Before run make sure you create wallet first and have 70k balance to became validator.
+
 ## Update Dependency
 ```
 sudo apt update && sudo apt upgrade -y
@@ -65,7 +67,9 @@ wget -O wormholes_install.sh https://docker.wormholes.com/wormholes_install.sh &
 ## Monitor Node 
 ```
 screen -R wormholes
-
+wget -0 CheckWorm.sh https://raw.githubusercontent.com/MNFaizi/nodeBlock_manual/main/Wormholes/CheckWorm.sh
+chmod +x CheckWorm.sh
+./CheckWorm.sh
 ```
 ## Check Account Balance
 ```
